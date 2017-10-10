@@ -48,12 +48,12 @@ class Game
   end
 
   def deal_cards
-    @dealt_cards = deck.cards.sample(1)
+    @dealt_cards = deck.deck.sample(1)
   end
 
   def remove_card_from_deck
-    ind = deck.cards.find_index(@dealt_cards[0])
-    deck.cards.delete_at(ind)
+    ind = deck.deck.find_index(@dealt_cards)
+    deck.deck.delete_at(ind)
   end
 
   def assign_hand_and_bet
@@ -81,13 +81,13 @@ class Game
     #Assign to players
     no_of_players.times do |n|
       @player_arr[n].no_of_hands.times do |h|
-        @player_arr[n].hand[h].cards_in_hand << deal_cards[0]
+        @player_arr[n].hand[h].cards_in_hand << deal_cards
         remove_card_from_deck
       end
     end
 
     #Assign to dealer (WILL HAVE TO FLIP ONE CARD)
-    dealer.dealer_hand.cards_in_hand << deal_cards[0]
+    dealer.dealer_hand.cards_in_hand << deal_cards
     remove_card_from_deck
   end
 
