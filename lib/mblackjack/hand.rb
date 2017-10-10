@@ -9,6 +9,7 @@ class Hand
     @hand_value = 0
   end
 
+  #Could be improved
   def calc_hand_value
     @hand_value = 0
     cards_in_hand.each_with_index do |c,ind|

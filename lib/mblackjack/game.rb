@@ -9,6 +9,8 @@ class Game
     @hand_arr = [@hand1, @hand2, @hand3, @hand4, @hand5, @hand6]
   end
 
+  private
+
   def record_no_of_players
     puts "How many players are playing today?"
     @no_of_players = gets.chomp.to_i
@@ -20,15 +22,21 @@ class Game
   end
 
   def start
+    if no_of_players < 1
+      record_no_of_players
+    end
     assign_hand_and_bet
-    assign_card_roundone
-    assign_card_roundone
+    assign_first_two_round_cards
     show_player_cards
-    round_one_blackjack
+    check_for_two_card_blackjack
     show_one_dealer_card
-    choose
+    player_choose_action
     dealer_draws
     compare_with_dealer
+    ask_if_play_again
+  end
+
+  def ask_if_play_again
     p "Would you like to play again? (y/n)"
     answer = gets.chomp
     if answer == "y"
@@ -64,7 +72,12 @@ class Game
     end
   end
 
-  def assign_card_roundone
+  def assign_first_two_round_cards
+    assign_card
+    assign_card
+  end
+
+  def assign_card
     #Assign to players
     no_of_players.times do |n|
       @player_arr[n].no_of_hands.times do |h|
@@ -95,7 +108,7 @@ class Game
     card_v > 21
   end
 
-  def choose
+  def player_choose_action
     no_of_players.times do |n|
       hands_left = @player_arr[n].hand - @player_arr[n].hand_done
       while hands_left != []
@@ -146,13 +159,11 @@ class Game
     end
   end
 
-
-
   def blackjack(card_value)
     card_value == 21
   end
 
-  def round_one_blackjack
+  def check_for_two_card_blackjack
     no_of_players.times do |n|
       @player_arr[n].no_of_hands.times do |h|
         if @player_arr[n].hand[h].hand_value == 21
