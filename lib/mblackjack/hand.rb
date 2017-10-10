@@ -1,3 +1,4 @@
+require_relative 'card.rb'
 class Hand
   attr_accessor :hand_no, :cards_in_hand, :bet, :choices, :hand_value
 
