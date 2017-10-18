@@ -22,9 +22,18 @@ class Card
     @@values
   end
 
-  def show_suit_rank
-    puts "#{rank}#{suit}"
+  def self.show_suit_rank(hand)
+    cards = ""
+    hand.each do |card|
+      cards += "#{card.rank} of #{card.suit}, "
+    end
+    p cards
   end
 
 
 end
+
+card1 = Card.new(5,'H')
+card2 = Card.new(8,'S')
+
+Card.show_suit_rank([card1,card2])

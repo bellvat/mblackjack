@@ -1,3 +1,5 @@
+require_relative 'card.rb'
+
 class Game
   attr_accessor :deck, :dealer, :no_of_players, :player_arr, :hand_arr
 
@@ -91,17 +93,18 @@ class Game
     remove_card_from_deck
   end
 
+
   def show_player_cards
     no_of_players.times do |n|
       @player_arr[n].no_of_hands.times do |h|
-        puts "Player #{@player_arr[n].player_no}: Hand #{@player_arr[n].hand[h].hand_no} cards: #{@player_arr[n].hand[h].cards_in_hand}."
+        puts "Player #{@player_arr[n].player_no}: Hand #{@player_arr[n].hand[h].hand_no} cards: #{Card.show_suit_rank(@player_arr[n].hand[h].cards_in_hand)}."
         @player_arr[n].hand[h].calc_hand_value
       end
     end
   end
 
   def show_one_dealer_card
-    puts "Dealer one card show: #{dealer.dealer_hand.cards_in_hand[0]}"
+    puts "Dealer one card show: #{Card.show_suit_rank(dealer.dealer_hand.cards_in_hand)}"
   end
 
   def bust? (card_v)
