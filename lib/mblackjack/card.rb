@@ -32,8 +32,3 @@ class Card
 
 
 end
-
-card1 = Card.new(5,'H')
-card2 = Card.new(8,'S')
-
-Card.show_suit_rank([card1,card2])

@@ -16,21 +16,22 @@ class Hand
     @hand_value = 0
     #ace can be 1 or 11, i want the program to find the value that is closest to but not exceeding 21
     all_values = []
-    value = 0
+    ranks = []
     value2 = 0
     target = 21
     hand.each do |card|
       if card.rank == "ace"
-        value += 1
-        value2 += 11
+        Card.values[card.rank].each do |a|
+          ranks << [a]
+        end
       else
-        value += Card.values[card.rank]
-        value2 += Card.values[card.rank]
+        ranks << Card.values[card.rank]
       end
     end
-    all_values.push(value,value2)
-    p all_values
-    p all_values.select {|v| v <= 21}
+  #  p ranks
+    #all_values.push(value,value2)
+    #p all_values
+    #p all_values.select {|v| v <= 21}
 
   end
 
