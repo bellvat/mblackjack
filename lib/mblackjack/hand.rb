@@ -27,6 +27,7 @@ class Hand
       else
         ranks << Card.values[card.rank]
       end
+      p cards
     end
   #  p ranks
     #all_values.push(value,value2)
