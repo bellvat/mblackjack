@@ -6,4 +6,4 @@ bin_file = Pathname.new(__FILE__).realpath
 $LOAD_PATH.unshift File.expand_path('../../lib', bin_file)
 
 require 'mblackjack'
-M_blackjack::CLI.run
+Mblackjack::CLI.run

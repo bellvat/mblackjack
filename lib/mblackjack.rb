@@ -1,4 +1,3 @@
-require 'mblackjack/cli'
 require 'mblackjack/version'
 require 'mblackjack/deck'
 require 'mblackjack/player'
@@ -7,9 +6,11 @@ require 'mblackjack/dealer'
 require 'mblackjack/game'
 
 module Mblackjack
-  def self.start
-    game = Game.new
-    game.record_no_of_players
-    game.start
+  class CLI
+    def self.run
+      game = Game.new
+      game.record_no_of_players
+      game.start
     end
+  end
 end

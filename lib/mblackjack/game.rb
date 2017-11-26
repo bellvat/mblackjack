@@ -9,7 +9,7 @@ class Game
     @hand_arr = [@hand1, @hand2, @hand3, @hand4, @hand5, @hand6]
   end
 
-  private
+
 
   def record_no_of_players
     puts "How many players are playing today?"
@@ -36,6 +36,8 @@ class Game
     ask_if_play_again
   end
 
+  private
+  
   def ask_if_play_again
     p "Would you like to play again? (y/n)"
     answer = gets.chomp
