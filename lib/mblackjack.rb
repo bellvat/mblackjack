@@ -1,3 +1,4 @@
+require 'mblackjack/cli'
 require 'mblackjack/version'
 require 'mblackjack/deck'
 require 'mblackjack/player'
