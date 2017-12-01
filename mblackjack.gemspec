@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["msirathanarun@gmail.com"]
 
   spec.summary       = "Blackjack game"
-  spec.description   = "Blackjack game"
+  spec.description   = "Type in m_blackjack in terminal to start :)"
   spec.homepage      = "https://github.com/bellvat"
   spec.license       = "MIT"
 
