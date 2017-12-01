@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type in m_blackjack in your terminal, and start playing!
+You start with 100 points/dollars, and at this point, can go negative. 
 
 ## Development
 
