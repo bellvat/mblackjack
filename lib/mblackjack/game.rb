@@ -16,8 +16,8 @@ class Game
     @no_of_players = gets.chomp.to_i
 
     @no_of_players.times do |c|
-        @player_arr[c] = Player.new(100)
-        @player_arr[c].player_no = (c+1)
+      @player_arr[c] = Player.new(100)
+      @player_arr[c].player_no = (c+1)
     end
   end
 
@@ -37,7 +37,7 @@ class Game
   end
 
   private
-  
+
   def ask_if_play_again
     p "Would you like to play again? (y/n)"
     answer = gets.chomp
